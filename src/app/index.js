@@ -12,13 +12,27 @@ class TodoComponent extends React.Component {
   render() {
     var todos = this.state.todos;
     todos = todos.map((item, index) => {
-      return <li>{item}</li>;
+      return <TodoItem item={item} key={index} />;
     });
     return (
       <div id="todo-list">
         <p>The busiest people have the most leisure...</p>
         <ul>{todos}</ul>
       </div>
+    );
+  }
+}
+
+//create TodoItem component
+
+class TodoItem extends React.Component {
+  render() {
+    return (
+      <li>
+        <div className="todo-item">
+          <span className="item-name">{this.props.item}</span>
+        </div>
+      </li>
     );
   }
 }
