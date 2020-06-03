@@ -3,6 +3,7 @@ var ReactDOM = require("react-dom");
 
 //modules requires
 var TodoItem = require("./todoItem");
+require("./css/index.css");
 
 class TodoComponent extends React.Component {
   constructor(props) {
