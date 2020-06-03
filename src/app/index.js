@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Route,
   browserHistory,
+  Link,
 } from "react-router-dom";
 
 //modules requires
@@ -40,6 +41,7 @@ class TodoComponent extends React.Component {
     });
     return (
       <div id="todo-list">
+        <Link to={"/about"}>About</Link>
         <p>The busiest people have the most leisure...</p>
         <ul>{todos}</ul>
         <AddItem onAdd={this.onAdd} />
