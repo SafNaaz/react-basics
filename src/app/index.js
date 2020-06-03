@@ -16,10 +16,18 @@ class TodoComponent extends React.Component {
     });
     return (
       <div id="todo-list">
-        <p>The busiest people have the most leisure...</p>
+        <p onClick={this.clicked}>
+          The busiest people have the most leisure...
+        </p>
         <ul>{todos}</ul>
       </div>
     );
+  }
+
+  //custom functions
+
+  clicked() {
+    console.log("you clicked me");
   }
 }
 
