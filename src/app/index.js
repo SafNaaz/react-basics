@@ -1,10 +1,27 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
+import {
+  BrowserRouter as Router,
+  Route,
+  browserHistory,
+} from "react-router-dom";
 
 //modules requires
 var TodoItem = require("./todoItem");
 require("./css/index.css");
 var AddItem = require("./addItem");
+var About = require("./about");
+
+class App extends React.Component {
+  render() {
+    return (
+      <Router history={browserHistory}>
+        <Route exact path={"/"} component={TodoComponent}></Route>
+        <Route path={"/about"} component={About}></Route>
+      </Router>
+    );
+  }
+}
 
 class TodoComponent extends React.Component {
   constructor(props) {
@@ -62,4 +79,4 @@ class TodoComponent extends React.Component {
 }
 
 //put component into html page
-ReactDOM.render(<TodoComponent />, document.getElementById("todo-wrapper"));
+ReactDOM.render(<App />, document.getElementById("todo-wrapper"));
