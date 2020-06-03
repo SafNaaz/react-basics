@@ -46,6 +46,19 @@ class TodoComponent extends React.Component {
       todos: updatedTodos,
     });
   }
+
+  //lifecycle methods
+  componentWillMount() {
+    console.log("componentWillMount");
+  }
+
+  componentDidMount() {
+    console.log("componentDidMount");
+  }
+
+  componentWillUpdate() {
+    console.log("componentWillUpdate");
+  }
 }
 
 //put component into html page
